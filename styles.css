@@ -26,13 +26,14 @@ body {
 .logo {
     width: 50px;
     margin-bottom: 40px;
+    
 }
 
 .avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    overflow: hidden;
+    margin-bottom: 40px;
 }
 
 /* ======= INDEX PAGE (INVOICE LIST) ======= */
@@ -57,13 +58,34 @@ body {
 }
 
 .new-invoice-btn {
-    background: #7c5dfa;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #7C5DFA;
     color: white;
-    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
+    transition: background 0.3s ease;
 }
+
+.new-invoice-btn:hover {
+    background: #9277FF;
+}
+
+.new-invoice-btn .icon {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .invoice-list {
     margin-top: 20px;

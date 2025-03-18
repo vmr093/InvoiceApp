@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     row.innerHTML = `
                         <td>${item.name}</td>
                         <td>${item.quantity}</td>
-                        <td>£${item.price.toFixed(2)}</td>
-                        <td>£${item.total.toFixed(2)}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>$${item.total.toFixed(2)}</td>
                     `;
                     itemsList.appendChild(row);
                 });

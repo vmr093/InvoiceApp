@@ -64,5 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             invoiceList.appendChild(invoiceElement);
         });
+
+    
     }
 });
