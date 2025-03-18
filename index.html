@@ -16,6 +16,69 @@
     <img src="assets/image-avatar.jpg" alt="Avatar" class="avatar">
   </div>
 
+  <!-- Add/Edit Invoice Modal -->
+<div id="invoice-modal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title">New Invoice</h2>
+      <form id="invoice-form">
+          <div class="form-section">
+              <h3>Bill From</h3>
+              <label>Street Address</label>
+              <input type="text" id="sender-address">
+
+              <div class="row">
+                  <div><label>City</label><input type="text" id="sender-city"></div>
+                  <div><label>Post Code</label><input type="text" id="sender-postcode"></div>
+                  <div><label>Country</label><input type="text" id="sender-country"></div>
+              </div>
+          </div>
+
+          <div class="form-section">
+              <h3>Bill To</h3>
+              <label>Client's Name</label>
+              <input type="text" id="client-name">
+              <label>Client's Email</label>
+              <input type="email" id="client-email">
+              <label>Street Address</label>
+              <input type="text" id="client-address">
+
+              <div class="row">
+                  <div><label>City</label><input type="text" id="client-city"></div>
+                  <div><label>Post Code</label><input type="text" id="client-postcode"></div>
+                  <div><label>Country</label><input type="text" id="client-country"></div>
+              </div>
+          </div>
+
+          <div class="form-section">
+              <label>Invoice Date</label>
+              <input type="date" id="invoice-date">
+              <label>Payment Terms</label>
+              <select id="payment-terms">
+                  <option value="1">Net 1 Day</option>
+                  <option value="7">Net 7 Days</option>
+                  <option value="14">Net 14 Days</option>
+                  <option value="30">Net 30 Days</option>
+              </select>
+          </div>
+
+          <label>Project Description</label>
+          <input type="text" id="project-description">
+
+          <h3>Item List</h3>
+          <div id="item-list"></div>
+          <button type="button" id="add-item">+ Add New Item</button>
+
+          <div class="form-actions">
+              <button type="button" class="cancel-btn">Cancel</button>
+              <button type="submit" class="save-btn">Save Changes</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+
+
   <!-- Main Content -->
   <div class="container">
     <div class="header">

@@ -9,29 +9,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (invoice) {
                 document.getElementById("invoice-id").innerText = invoice.id;
-                document.getElementById("description").innerText = invoice.description;
-                document.getElementById("status").innerText = invoice.status;
-                document.getElementById("status").classList.add(`status-${invoice.status}`);
-                document.getElementById("client-name").innerText = invoice.clientName;
-                document.getElementById("client-email").innerText = invoice.clientEmail;
-                document.getElementById("invoice-date").innerText = invoice.createdAt;
-                document.getElementById("payment-due").innerText = invoice.paymentDue;
-                document.getElementById("client-address").innerText = `${invoice.clientAddress.street}, ${invoice.clientAddress.city}`;
+                document.getElementById("sender-address").value = invoice.senderAddress.street;
+                document.getElementById("sender-city").value = invoice.senderAddress.city;
+                document.getElementById("sender-postcode").value = invoice.senderAddress.postCode;
+                document.getElementById("sender-country").value = invoice.senderAddress.country;
 
-                document.getElementById("total").innerText = invoice.total.toFixed(2);
+                document.getElementById("client-name").value = invoice.clientName;
+                document.getElementById("client-email").value = invoice.clientEmail;
+                document.getElementById("client-address").value = invoice.clientAddress.street;
+                document.getElementById("client-city").value = invoice.clientAddress.city;
+                document.getElementById("client-postcode").value = invoice.clientAddress.postCode;
+                document.getElementById("client-country").value = invoice.clientAddress.country;
 
-                const itemsList = document.getElementById("items-list");
+                document.getElementById("invoice-date").value = invoice.createdAt;
+                document.getElementById("payment-terms").value = invoice.paymentTerms;
+                document.getElementById("project-description").value = invoice.description;
+
+                // Load Items
+                const itemList = document.getElementById("item-list");
                 invoice.items.forEach(item => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-                        <td>${item.name}</td>
-                        <td>${item.quantity}</td>
-                        <td>$${item.price.toFixed(2)}</td>
-                        <td>$${item.total.toFixed(2)}</td>
+                    const itemRow = document.createElement("div");
+                    itemRow.classList.add("item-row");
+                    itemRow.innerHTML = `
+                        <input type="text" value="${item.name}" />
+                        <input type="number" value="${item.quantity}" />
+                        <input type="number" value="${item.price}" />
+                        <input type="number" value="${item.total}" disabled />
                     `;
-                    itemsList.appendChild(row);
+                    itemList.appendChild(itemRow);
                 });
             }
         })
-        .catch(error => console.error("Error fetching invoice:", error));
+        .catch(error => console.error("Error loading invoice:", error));
 });
