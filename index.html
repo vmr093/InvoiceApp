@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Invoice app</title>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets/logo.svg" alt="Logo" class="logo">
+    <div class="theme-toggle">
+      <img src="assets/icon-moon.svg" alt="Dark Mode">
+    </div>
+    <img src="assets/image-avatar.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="header">
+      <h1>Invoices</h1>
+      <p class="total-invoices">There are <span id="invoice-count">0</span> total invoices</p>
+
+      <div class="filter">
+        <label>Filter by status:</label>
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="draft">Draft</option>
+          <option value="pending">Pending</option>
+          <option value="paid">Paid</option>
+        </select>
+      </div>
+
+      <button class="new-invoice-btn">New Invoice</button>
+    </div>
+
+    <div class="invoice-list" id="invoice-list">
+      <!-- Invoices will be loaded dynamically here -->
+    </div>
+
+    <p id="empty-message" class="empty-message">There is nothing here. Create an invoice by clicking the "New Invoice" button.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
