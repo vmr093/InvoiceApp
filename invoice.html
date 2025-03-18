@@ -1,77 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invoice Details</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="invoice.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="invoice.js"></script>
 </head>
 <body>
 
-  <div class="sidebar">
-    <img src="assets/logo.svg" alt="Logo" class="logo">
-    <img src="assets/image-avatar.jpg" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="invoice-details-container">
-    <a href="index.html" class="go-back"><img src="assets/icon-arrow-left.svg" alt="Back"> Go back</a>
-
-    <div class="invoice-header">
-      <div class="status-section">
-        <p>Status: <span id="status" class="status"></span></p>
-      </div>
-      <div class="action-buttons">
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
-        <button class="paid-btn">Mark as Paid</button>
-      </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="assets/logo.svg" alt="Logo" class="logo">
+        </div>
+        <div class="theme-toggle">
+            <img src="assets/icon-moon.svg" alt="Dark Mode">
+        </div>
+        <img src="assets/image-avatar.jpg" alt="Avatar" class="avatar">
     </div>
 
-    <div class="invoice-content">
-      <h2>#<span id="invoice-id"></span></h2>
-      <p id="description"></p>
+    <!-- Invoice Details Container -->
+    <div class="invoice-details-container">
+        <a href="index.html" class="go-back">
+            <img src="assets/icon-arrow-left.svg" alt="Back"> Go back
+        </a>
 
-      <div class="billing-info">
-        <div>
-          <h3>Invoice Date</h3>
-          <p id="invoice-date"></p>
+        <!-- Invoice Header -->
+        <div class="invoice-header">
+            <div class="status-section">
+                <p>Status:</p>
+                <span id="invoice-status" class="status"></span>
+            </div>
+            <div class="action-buttons">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+                <button class="paid-btn">Mark as Paid</button>
+            </div>
         </div>
-        <div>
-          <h3>Payment Due</h3>
-          <p id="payment-due"></p>
-        </div>
-        <div>
-          <h3>Bill To</h3>
-          <p id="client-name"></p>
-          <p id="client-address"></p>
-        </div>
-        <div>
-          <h3>Sent To</h3>
-          <p id="client-email"></p>
-        </div>
-      </div>
 
-      <div class="invoice-items">
-        <table>
-          <thead>
-            <tr>
-              <th>Item Name</th>
-              <th>QTY.</th>
-              <th>Price</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="items-list"></tbody>
-        </table>
-      </div>
+        <!-- Invoice Content -->
+        <div class="invoice-content">
+            <div class="invoice-top">
+                <div>
+                    <h2 id="invoice-id"></h2>
+                    <p id="project-description"></p>
+                </div>
+                <div class="bill-from">
+                    <p id="sender-address"></p>
+                    <p><span id="sender-city"></span>, <span id="sender-postcode"></span></p>
+                    <p id="sender-country"></p>
+                </div>
+            </div>
 
-      <div class="amount-due">
-        <p>Amount Due</p>
-        <p><strong>$<span id="total"></span></strong></p>
-      </div>
+            <div class="billing-details">
+                <div>
+                    <h4>Invoice Date</h4>
+                    <p id="invoice-date"></p>
+                    <h4>Payment Due</h4>
+                    <p id="payment-due"></p>
+                </div>
+                <div>
+                    <h4>Bill To</h4>
+                    <p id="client-name"></p>
+                    <p id="client-address"></p>
+                    <p><span id="client-city"></span>, <span id="client-postcode"></span></p>
+                    <p id="client-country"></p>
+                </div>
+                <div>
+                    <h4>Sent to</h4>
+                    <p id="client-email"></p>
+                </div>
+            </div>
+
+            <!-- Item List -->
+            <h4>Item List</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Qty.</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="item-list"></tbody>
+            </table>
+
+            <!-- Amount Due -->
+            <div class="amount-due">
+                <span>Amount Due</span>
+                <span id="amount-due"></span>
+            </div>
+        </div>
     </div>
-  </div>
 
 </body>
 </html>
