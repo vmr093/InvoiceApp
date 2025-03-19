@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const cancelBtn = document.querySelector(".cancel-btn");
     const invoiceForm = document.getElementById("invoice-form");
 
+    // Ensure the modal is hidden on page load
+    invoiceModal.style.display = "none"; 
+
     function openModal() {
         invoiceModal.style.display = "flex";
     }
